@@ -1,0 +1,74 @@
+#container{
+    .getInfo{
+        .open-modal{
+            margin-left: 270px;
+            margin-top: 100px;
+        }
+        .modal{
+            .modal-body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                input{
+                    display: flex;
+                    justify-content: center;
+                    outline: none;
+                    border-radius: 5px;
+                    padding-left: 120px;
+                    padding-right: 50px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+                label{
+                    text-align: center;
+                }
+                .name-part{
+                    margin-bottom: 15px;
+                }
+                span{
+                    color: red;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .alert-part{
+        width: 500px;
+        text-align: center;
+    }
+    .table-part{
+        width: 1000px;
+        .delete-option{
+            i{
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 0.5s;
+            }
+            .delete{
+                color: red;
+            }
+            .delete:hover{
+                color: darkred;
+            }
+        }
+        .update-option{
+            i{
+                font-size: 20px;
+                cursor: pointer;
+                transition: all 0.5s;
+            }
+            .update{
+                position: relative;
+                bottom: 25px;
+                left: 20px;
+                color: darkorange;
+                padding-left: 20px;
+            }
+            .update:hover{
+                color: orange;
+            }
+
+        }
+    }
+}

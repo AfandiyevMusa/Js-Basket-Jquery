@@ -1,0 +1,92 @@
+#container .getInfo .open-modal {
+  margin-left: 270px;
+  margin-top: 100px;
+}
+
+#container .getInfo .modal .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container .getInfo .modal .modal-body input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 120px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#container .getInfo .modal .modal-body label {
+  text-align: center;
+}
+
+#container .getInfo .modal .modal-body .name-part {
+  margin-bottom: 15px;
+}
+
+#container .getInfo .modal .modal-body span {
+  color: red;
+  font-weight: 600;
+}
+
+#container .alert-part {
+  width: 500px;
+  text-align: center;
+}
+
+#container .table-part {
+  width: 1000px;
+}
+
+#container .table-part .delete-option i {
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#container .table-part .delete-option .delete {
+  color: red;
+}
+
+#container .table-part .delete-option .delete:hover {
+  color: darkred;
+}
+
+#container .table-part .update-option i {
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#container .table-part .update-option .update {
+  position: relative;
+  bottom: 25px;
+  left: 20px;
+  color: darkorange;
+  padding-left: 20px;
+}
+
+#container .table-part .update-option .update:hover {
+  color: orange;
+}
+/*# sourceMappingURL=task1.css.map */
