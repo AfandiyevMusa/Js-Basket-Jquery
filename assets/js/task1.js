@@ -8,11 +8,14 @@ $(function () {
     //     $(".alert-part").removeClass("d-none")
     //     $(".headings").addClass("d-none")
     // }
+
     $(document).on("click", ".open-modal", function (e) {
         e.preventDefault();
         $(".update-btn").addClass("d-none");
         $(".save-btn").removeClass("d-none");
-
+        
+        $(".name").val("");
+        $(".surname").val("");
         $(".for-updating").html("Student Informations")
         $(".save-btn").html("Save");
     })
