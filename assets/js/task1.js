@@ -13,7 +13,6 @@ $(function () {
         $(".surname").val("");
 
         $(".for-updating").html("Student Informations")
-        $(".save-btn").html("Save");
     })
 
     $(document).on("click", ".save-btn", function (e) {
@@ -72,7 +71,6 @@ $(function () {
         $(".save-btn").addClass("d-none");
 
         $(".for-updating").html("Update Informations")
-        $(".save-btn").html("Update");
         let selectedItem = allStudents.find(m => m.id == $(this).attr("data-id"));
 
         $(".name").val(selectedItem.name);
