@@ -4,50 +4,48 @@ $(function () {
     if (JSON.parse(localStorage.getItem("allStudents") != null)) {
         allStudents = JSON.parse(localStorage.getItem("allStudents"));
     }
-    // if (allStudents.length == 0) {
-    //     $(".alert-part").removeClass("d-none")
-    //     $(".headings").addClass("d-none")
-    // }
-
     $(document).on("click", ".open-modal", function (e) {
         e.preventDefault();
         $(".update-btn").addClass("d-none");
         $(".save-btn").removeClass("d-none");
-        
+
         $(".name").val("");
         $(".surname").val("");
+
         $(".for-updating").html("Student Informations")
         $(".save-btn").html("Save");
     })
 
     $(document).on("click", ".save-btn", function (e) {
         e.preventDefault();
-        // if (allStudents.length != 0) {
-        //     $(".alert-part").addClass("d-none")
-        //     $(".headings").removeClass("d-none")
-
-            if ($(".name").val().length == 0 && $(".surname").val().length == 0) {
-                $(".surname-empty").removeClass("d-none")
-                $(".name-empty").removeClass("d-none")
-            } else if ($(".name").val().length == 0 && $(".surname").val().length != 0) {
-                $(".name-empty").removeClass("d-none")
-            } else if ($(".name").val().length != 0 && $(".surname").val().length == 0) {
-                $(".surname-empty").removeClass("d-none")
-            } else {
-                $(".surname-empty").addClass("d-none")
-                $(".name-empty").addClass("d-none")
-                allStudents.push({
-                    id: randomIdSelector(),
-                    name: $(".name").val(),
-                    surname: $(".surname").val()
-                })
-                localStorage.setItem("allStudents", JSON.stringify(allStudents));
-                addToTable();
-                close();
-                $(".name").val("");
-                $(".surname").val("");
-            }
-        // }
+        if ($(".name").val().length == 0 && $(".surname").val().length == 0) {
+            $(".surname-empty").removeClass("d-none")
+            $(".name-empty").removeClass("d-none")
+        } else if ($(".name").val().length == 0 && $(".surname").val().length != 0) {
+            $(".name-empty").removeClass("d-none")
+        } else if ($(".name").val().length != 0 && $(".surname").val().length == 0) {
+            $(".surname-empty").removeClass("d-none")
+        } else {
+            $(".surname-empty").addClass("d-none")
+            $(".name-empty").addClass("d-none")
+            allStudents.push({
+                id: randomIdSelector(),
+                name: $(".name").val(),
+                surname: $(".surname").val()
+            })
+            localStorage.setItem("allStudents", JSON.stringify(allStudents));
+            addToTable();
+            close();
+            Swal.fire({
+                position: 'top-origin',
+                icon: 'success',
+                title: 'Student added',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            $(".name").val("");
+            $(".surname").val("");
+        }
     })
 
     $(document).on("click", ".delete", function (e) {
@@ -60,6 +58,13 @@ $(function () {
             allStudents.splice(indexOfSelectedItem, 1)
         }
         localStorage.setItem("allStudents", JSON.stringify(allStudents));
+        Swal.fire({
+            position: 'top-origin',
+            icon: 'error',
+            title: 'Successfully Deleted',
+            showConfirmButton: false,
+            timer: 2000
+        })
     })
 
     $(document).on("click", ".update", function () {
@@ -84,9 +89,16 @@ $(function () {
             addToTable();
             $(document).off("click", ".update-btn")
             close();
+            Swal.fire({
+                position: 'top-origin',
+                icon: 'warning',
+                title: 'Updated',
+                showConfirmButton: false,
+                timer: 2000
+            })
         })
-
     })
+
 
     function randomIdSelector() {
         let ID = Math.floor((Math.random() * 10000) + 1);

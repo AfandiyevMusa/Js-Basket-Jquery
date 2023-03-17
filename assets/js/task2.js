@@ -20,14 +20,17 @@ $(function () {
         }
     })
 
-    $(document).on("click", ".slider .dots i", function(){
+    var dots = $(".slider .dots i")
+    $(document).on("click", dots, function(){
+        console.log("hello");
         eachImage = $(".img img");
+        // let elem = eachImage.find(m=>m.id = elem.attr("data-id"))
         if($(this).attr("data-id") == eachImage.attr("data-id")){
-            $(this).addClass("active-img")
-            console.log("hi");
+            eachImage.addClass("active-img")
+            // console.log("hi");
         }else{
-            console.log("bye");
-            $(this).removeClass("active-img")
+            // console.log("bye");
+            eachImage.removeClass("active-img")
         }
     })
 });
